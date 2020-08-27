@@ -10,13 +10,14 @@ const CurrentWeatherAPI = (props) => {
     const [temperature, setTemperature] = useState(0);
     const [feels, setFeels] = useState(0);
     const [humidity, setHumidity] = useState(0);
+    const [wind, setWind] = useState(0)
     const [description, setDescription] = useState("");
     const [icon, setIcon] = useState("");
     const [isFetched, setIsFetched] = useState(false);
 
 
     useEffect(() => {
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${props.latitude}&lon=${props.longitude}&units=metric&appid=${props.appid}`)
+        axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${props.latitude}&lon=${props.longitude}&units=metric&appid=${props.appid}&lang=es`)
             .then(res => {
                 const data = res.data;
                 setCity(data.name);
@@ -24,6 +25,7 @@ const CurrentWeatherAPI = (props) => {
                 setTemperature(data.main.temp);
                 setFeels(data.main.feels_like);
                 setHumidity(data.main.humidity);
+                setWind(data.wind.speed);
                 setDescription(data.weather[0].description);
                 setIcon(data.weather[0].icon);
                 setIsFetched(data.weather[0].icon);
@@ -34,17 +36,18 @@ const CurrentWeatherAPI = (props) => {
     return (
         <div>
             {isFetched &&
-                <div>
-                    <h2>{city}</h2>
-                    <h2>{country}</h2>
-                    <h2><Moment format="dddd Do MMM YYYY" /></h2>
-                    <h2><Moment format="hh:mm a" interval={30000} /></h2>
+                <div className="weather-card--current__containter">
+                    <p>{city}, {country}</p>
+                    <p><Moment locale="es" format="dddd Do MMM YYYY" /></p>
+                    <p><Moment format="hh:mm a" interval={30000} /></p>
                     <Weather
+                        style="weather-card--current__details"
                         temperature={temperature}
                         feels={feels}
                         humidity={humidity}
+                        wind={wind}
                         description={description}
-                        icon={`http://openweathermap.org/img/w/${icon}.png`}
+                        icon={`http://openweathermap.org/img/wn/${icon}@2x.png`}
                     />
                 </div>
             }

@@ -1,0 +1,103 @@
+.weather-card--current__containter {
+    align-items: center;
+    background-color: $dark-gray;
+    display: flex;
+    flex-direction: column;
+    font-size: $s-size;
+    line-height: 1;
+
+
+    p {
+        margin: 5px 0;
+    }
+}
+
+.weather-card--current__details {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+
+    div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    h5 {
+        font-size: $s-size;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .weather__details {
+        display: flex;
+        flex-direction: row;
+        font-size: $l-size;
+        justify-content: space-around;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .weather__temperature {
+        font-size: $xxl-size;
+        margin: 20px 0;
+    }
+
+}
+
+.weather-card--forecast {
+    align-items: center;
+    background-color: $dark-cyan;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2px;
+    padding-bottom: 10px;
+
+    div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h5 {
+        font-size: $s-size;
+        font-weight: 400;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .weather__details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2vw;
+        width: 100%;
+    }
+
+    .weather__hour {
+        font-size: $l-size;
+        padding: 0 2vw;
+    }
+
+    .weather__temperature {
+        font-size: $xl-size;
+        padding: 0 2vw;
+    }
+
+    .weather__time__description {
+        font-size: $s-size;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+.weather__symbol {
+    font-size: 50%;
+    vertical-align: top;
+}
+

@@ -24,7 +24,7 @@ const AppRouter = () => {
         <BrowserRouter>
             {!latitude && <h1>Por favor, habilita la geolocalizacion</h1>}
             {isFetched &&
-                <div>
+                <div className="container">
                     <CurrentWeatherAPI latitude={latitude} longitude={longitude} appid={appid} />
                     <ForecastAPI latitude={latitude} longitude={longitude} appid={appid} />
                 </div>

@@ -1,0 +1,32 @@
+.forecast-container {
+    background-color: $gray;
+}
+
+.forecast-container__routes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+
+    li{
+        background-color: $light-gray;
+        border-top: 1.2px solid lighten($color: $light-gray, $amount: 10%);
+        text-align: center;
+        width: 100%;
+
+        a {
+            color: $white;
+            display:inline-block;
+            padding: 20px 0;
+            width: 100%;
+        }
+    }
+    
+}
+
+.forecast-container__routes--active {
+    border-bottom: 5px solid $cyan;
+    box-sizing: border-box;
+    width: 100%;
+}

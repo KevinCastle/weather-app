@@ -1,0 +1,36 @@
+html{
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+body{
+    background-color: #333C4A;
+    color: #eceff1;
+    font-size: $m-size;
+    font-family: Helvetica,
+    Arial,
+    sans-serif;
+    
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled{
+    cursor: default;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+li {
+    list-style: none;
+}

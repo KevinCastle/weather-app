@@ -1,5 +1,19 @@
 .container{
     border-radius: $s-size;
     margin: 20vh 20vw;
+    margin-bottom: 10vh;
     overflow:hidden;
+
+    @media (max-width: $desktop-breakpoint) {
+        margin: 5vh 5vw;
+    }
+}
+
+.container__footer {
+    text-align: center;
+    margin-top: 0;
+
+    a{
+        color: $cyan;
+    }
 }

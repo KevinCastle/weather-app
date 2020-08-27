@@ -48,10 +48,9 @@ const ForecastAPI = (props) => {
                     <li key={day[0].dt_txt.substring(0, 10)}>
                         <NavLink
                             to={`/${day[0].dt_txt.substring(0, 10)}`}
-                            activeClassName="forecast-container__routes--active"
-                        >
+                            activeClassName="forecast-container__routes--active">
                             {
-                                <Moment locale="es" format="D MMMM">
+                                <Moment locale="es" format="DD MMM">
                                     {day[0].dt_txt.substring(0, 10)}
                                 </Moment>
 

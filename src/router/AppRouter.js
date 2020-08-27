@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 import CurrentWeatherAPI from '../services/CurrentWeatherAPI';
 import ForecastAPI from '../services/ForecastAPI';
 
@@ -24,9 +24,19 @@ const AppRouter = () => {
         <BrowserRouter>
             {!latitude && <h1>Por favor, habilita la geolocalizacion</h1>}
             {isFetched &&
-                <div className="container">
-                    <CurrentWeatherAPI latitude={latitude} longitude={longitude} appid={appid} />
-                    <ForecastAPI latitude={latitude} longitude={longitude} appid={appid} />
+                <div>
+                    <div className="container">
+                        <Link to="/">
+                            <CurrentWeatherAPI latitude={latitude} longitude={longitude} appid={appid} />
+                        </Link>
+                        <ForecastAPI latitude={latitude} longitude={longitude} appid={appid} />
+                    </div>
+                    <p className="container__footer">
+                        Created by
+                        <a target="_blank" href="https://kevincastle.github.io/Portfolio/"> Kevin Castillo </a>
+                        | Weather data from
+                        <a target="_blank" href="https://openweathermap.org"> OpenWeatherMap </a>
+                    </p>
                 </div>
             }
 

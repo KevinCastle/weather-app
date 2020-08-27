@@ -1,10 +1,13 @@
 .weather-card--current__containter {
     align-items: center;
     background-color: $dark-gray;
+    color: $white;
+    cursor: default;
     display: flex;
     flex-direction: column;
     font-size: $s-size;
     line-height: 1;
+    padding-top: 10px;
 
 
     p {
@@ -77,11 +80,25 @@
         justify-content: space-between;
         padding: 2vw;
         width: 100%;
+    
+        p {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: $desktop-breakpoint) {
+            justify-content: space-around;
+            padding: 20px 0;
+
+            p {
+                margin: 0;
+            }
+        }
     }
 
     .weather__hour {
         font-size: $l-size;
         padding: 0 2vw;
+        white-space: nowrap;
     }
 
     .weather__temperature {
@@ -93,6 +110,13 @@
         font-size: $s-size;
         margin: 0;
         text-align: center;
+    }
+
+    @media (max-width: $desktop-breakpoint) {
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-top: 20px;
     }
 }
 

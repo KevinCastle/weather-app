@@ -5,7 +5,7 @@
 .forecast-container__routes {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0;
     padding: 0;
 
@@ -18,9 +18,13 @@
         a {
             color: $white;
             display:inline-block;
-            padding: 20px 0;
+            padding: 20px 0px;
             width: 100%;
         }
+    }
+
+    @media (max-width: $desktop-breakpoint) {
+        font-size: $m-size;
     }
     
 }
@@ -30,3 +34,4 @@
     box-sizing: border-box;
     width: 100%;
 }
+

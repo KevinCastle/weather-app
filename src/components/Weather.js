@@ -1,9 +1,18 @@
 import React, { useEffect } from 'react'
+import Moment from 'react-moment'
 
 const Weather = (props) => {
     return (
         <div className={props.style}>
-            {props.hour && <div className="weather__hour">{props.hour.substring(11, 16)}</div>}
+            {props.hour &&
+                <div className="weather__hour">
+                    {
+                        <Moment format="hh:mm a">
+                            {props.hour}
+                        </Moment>
+                    }
+                </div>
+            }
             <div className="weather__time">
                 <img className="weather__time__icon" src={props.icon} />
                 <p className="weather__time__description">{props.description}</p>

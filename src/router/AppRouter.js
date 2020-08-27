@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { BrowserRouter, Link, Switch, Route, matchPath, useLocation } from 'react-router-dom';
 import CurrentWeatherAPI from '../services/CurrentWeatherAPI';
 import ForecastAPI from '../services/ForecastAPI';
 
@@ -11,6 +11,7 @@ const AppRouter = () => {
     const [isFetched, setIsFetched] = useState(false);
 
     useEffect(() => {
+
         navigator.geolocation.getCurrentPosition((position) => {
             if (position) {
                 setLatitude(position.coords.latitude);
@@ -26,9 +27,7 @@ const AppRouter = () => {
             {isFetched &&
                 <div>
                     <div className="container">
-                        <Link to="/">
                             <CurrentWeatherAPI latitude={latitude} longitude={longitude} appid={appid} />
-                        </Link>
                         <ForecastAPI latitude={latitude} longitude={longitude} appid={appid} />
                     </div>
                     <p className="container__footer">
@@ -39,7 +38,6 @@ const AppRouter = () => {
                     </p>
                 </div>
             }
-
         </BrowserRouter>
     )
 };

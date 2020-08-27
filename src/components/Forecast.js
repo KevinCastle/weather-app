@@ -1,5 +1,6 @@
 import React from 'react'
 import Weather from './Weather'
+import Graph from './graph'
 
 const Forecast = (props) => {
     return (
@@ -16,6 +17,7 @@ const Forecast = (props) => {
                     wind={time.wind.speed}
                     icon={`http://openweathermap.org/img/wn/${time.weather[0].icon}@2x.png`}
                 />)}
+            <Graph data={props.day} />
         </div>
     )
 }

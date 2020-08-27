@@ -1,70 +1,19 @@
-https://dev.to/nikhilkumaran/don-t-use-create-react-app-how-you-can-set-up-your-own-reactjs-boilerplate-43l0
+# Weather App :cloud_with_snow:
 
-npm init --y
-git init
+Weather App es una web app diseñada para poder consultar el tiempo actual y el de los siguientes cinco días!
+Está creada usando la API de OpenWeatherMap en su versión gratuita. 
+Además de ello, las tecnologías utilizadas han sido React con Hooks, HTML5 y SASS.
+Otros paquetes utilizados que destacan han sido [Axios](https://github.com/axios/axios) y [MomentJS](https://momentjs.com)
 
-code .gitignore:
-    node_modules
-    build
+## Instalación 💻
 
-npm install react react-dom --save
+Solo hay que descargar y usar NPM para usarla.
 
-npm install @babel/core @babel/preset-env @babel/preset-react --save-dev 
-
-code .babelrc:
-{
-    "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
-    ]
-}
-
-npm install webpack webpack-cli webpack-dev-server babel-loader css-loader style-loader html-webpack-plugin --save-dev 
+```bash
+npm install
+npm start
+```
 
 
-code webpack.config.js:
-
-const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-
-module.exports = {
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
-  },
-  resolve: {
-    modules: [path.join(__dirname, 'src'), 'node_modules'],
-    alias: {
-      react: path.join(__dirname, 'node_modules', 'react'),
-    },
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-        ],
-      },
-    ],
-  },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-    }),
-  ],
-};
-
-
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

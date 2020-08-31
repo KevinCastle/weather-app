@@ -47,7 +47,7 @@ const ForecastAPI = (props) => {
                 {isFetched && ListDay.map((day) =>
                     <li key={day[0].dt_txt.substring(0, 10)}>
                         <NavLink
-                            to={`/${day[0].dt_txt.substring(0, 10)}`}
+                            to={`/weather-app/${day[0].dt_txt.substring(0, 10)}`}
                             activeClassName="forecast-container__routes--active">
                             {
                                 <Moment locale="es" format="DD MMM">
@@ -61,7 +61,7 @@ const ForecastAPI = (props) => {
             </ul>
             <Switch>
                 {ListDay.map((day, index) =>
-                    <Route exact={true} path={`/${day[0].dt_txt.substring(0, 10)}`} key={index}>
+                    <Route exact={true} path={`/weather-app/${day[0].dt_txt.substring(0, 10)}`} key={index}>
                         <Forecast day={day} />
                     </Route>
                 )}
